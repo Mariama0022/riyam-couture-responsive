@@ -1,0 +1,208 @@
+/* ============================================================
+   RIYAM COUTURE — Feuille de style globale
+   ============================================================ */
+
+/* Base */
+* { font-family: 'Poppins', sans-serif;}
+body { background-color: #F5F7FA;
+}
+
+/* ── AUTH ─────────────────────────────────────────────────── */
+.auth-page {
+  min-height: 100vh;
+  background-image: url("assets/models/Image fond.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem;
+}
+.auth-container {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+}
+.logo { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1.2rem; }
+.logo img { max-width: 200px; width: 100%; height: auto; display: block; margin: 0 auto; }
+.input-box {
+  display: flex; align-items: center;
+  background: #fff; border: 1.5px solid #e0e0e0;
+  border-radius: 12px; padding: 0.9rem 1rem;
+  margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.input-box:focus-within { border-color: #e53982; }
+.input-box i { color: #aaa; width: 18px; }
+.input-box input { flex:1; border:none; outline:none; padding-left:.75rem; font-size:.95rem; background:transparent; }
+.toggle-password { cursor: pointer; color: #aaa; }
+.auth-btn {
+  width:100%; border:none; padding:.95rem; border-radius:12px;
+  background:#e53982; color:#fff; font-size:1rem; font-weight:700;
+  cursor:pointer; transition:.25s; display:flex; justify-content:center; align-items:center; gap:.5rem;
+}
+.auth-btn:hover { background:#c71f69; transform:translateY(-2px); }
+.auth-btn-outline {
+  width:100%; border:2px solid #e53982; padding:.9rem; border-radius:12px;
+  background:transparent; color:#e53982; font-size:1rem; font-weight:700;
+  cursor:pointer; transition:.25s; display:flex; justify-content:center; align-items:center; gap:.5rem;
+}
+.auth-btn-outline:hover { background:#e53982; color:#fff; }
+.separator { margin:1.2rem 0; text-align:center; position:relative; }
+.separator::before, .separator::after { content:""; position:absolute; top:50%; width:44%; height:1px; background:#ddd; }
+.separator::before { left:0; } .separator::after { right:0; }
+.separator span { background:rgba(255,255,255,.96); padding:0 1rem; color:#999; font-size:.9rem; }
+.switch-link { text-align:center; color:#555; font-size:.9rem; margin-top:1rem; }
+.switch-link a { color:#e53982; font-weight:700; cursor:pointer; text-decoration:none; }
+.switch-link a:hover { text-decoration:underline; }
+
+/* ── SIDEBAR ──────────────────────────────────────────────── */
+.sidebar { background-color:#1A1D2E; transition:all .3s ease; }
+.sidebar-link { transition:all .2s ease; border-radius:10px; }
+.sidebar-link:hover { background:rgba(233,30,99,.12); }
+.sidebar-link.active { background:#E91E63; }
+
+/* ── BOUTONS DASHBOARD ────────────────────────────────────── */
+.btn-primary { background-color:#E91E63; transition:all .3s ease; }
+.btn-primary:hover { background-color:#C2185B; transform:translateY(-1px); box-shadow:0 4px 12px rgba(233,30,99,.3); }
+.btn-outline-pink { border:1.5px solid #E91E63; color:#E91E63; background:transparent; transition:all .3s ease; }
+.btn-outline-pink:hover { background:#E91E63; color:#fff; }
+
+/* ── FORMULAIRES ──────────────────────────────────────────── */
+.form-input { transition:all .2s ease; }
+.form-input:focus { border-color:#E91E63; box-shadow:0 0 0 3px rgba(233,30,99,.1); outline:none; }
+
+/* ── TABLEAUX ─────────────────────────────────────────────── */
+.table-row { transition:background .15s; }
+.table-row:hover { background:#F9FAFB; }
+
+/* ── PAGES ────────────────────────────────────────────────── */
+.page { display:none; }
+.page.active { display:block; }
+
+/* ── CARTES STAT ──────────────────────────────────────────── */
+.stat-card { background:white; border-radius:16px; box-shadow:0 4px 20px rgba(0,0,0,.06); transition:all .3s; }
+.stat-card:hover { box-shadow:0 8px 30px rgba(0,0,0,.1); transform:translateY(-4px); }
+
+/* ── BADGES STATUT ────────────────────────────────────────── */
+.status-badge { padding:.3rem .8rem; border-radius:9999px; font-size:.75rem; font-weight:600; display:inline-flex; align-items:center; gap:.35rem; }
+.status-badge::before { content:''; width:6px; height:6px; border-radius:50%; display:inline-block; }
+.status-en-cours { background:#fff7ed; color:#ea580c; }
+.status-en-cours::before { background:#ea580c; }
+.status-termine  { background:#f0fdf4; color:#16a34a; }
+.status-termine::before  { background:#16a34a; }
+
+/* ── MODELS ───────────────────────────────────────────────── */
+.model-card { border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,.08); transition:all .4s cubic-bezier(.175,.885,.32,1.275); background:#f0f0f0; }
+.model-card:hover { transform:translateY(-8px); box-shadow:0 12px 24px rgba(233,30,99,.15); }
+.model-img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; transition:transform .6s; }
+.model-card:hover .model-img { transform:scale(1.08); }
+
+/* ── DROPDOWN ─────────────────────────────────────────────── */
+.dropdown-menu { opacity:0; visibility:hidden; transform:translateY(-8px); transition:all .2s ease; }
+.dropdown-menu.show { opacity:1; visibility:visible; transform:translateY(0); }
+
+/* ── TOAST ────────────────────────────────────────────────── */
+.toast { animation:slideIn .3s ease; }
+@keyframes slideIn { from{transform:translateX(100%);opacity:0} to{transform:translateX(0);opacity:1} }
+
+/* ── CARD HOVER ───────────────────────────────────────────── */
+.card-hover { transition:all .3s ease; }
+.card-hover:hover { transform:translateY(-4px); box-shadow:0 10px 25px rgba(0,0,0,.1); }
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width:1024px) {
+  .sidebar { transform:translateX(-100%); position:fixed; z-index:50; height:100vh; }
+  .sidebar.open { transform:translateX(0); }
+}
+@media (max-width:640px) {
+  .auth-page { justify-content:center; padding:1rem; }
+}
+
+/* ============================================================
+   RESPONSIVE COMPLÉMENTAIRE
+   ============================================================ */
+
+/* ── Mobile (< 480px) ─────────────────────────────────────── */
+@media (max-width: 480px) {
+  /* Auth */
+  .auth-container {
+    padding: 1.5rem 1.2rem;
+    border-radius: 16px;
+  }
+  .auth-btn, .auth-btn-outline {
+    padding: 0.8rem;
+    font-size: 0.92rem;
+  }
+  .input-box {
+    padding: 0.75rem 0.85rem;
+  }
+
+  /* Tableaux : réduire le padding des cellules */
+  th, td {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    font-size: 0.8rem;
+  }
+
+  /* Badges statut */
+  .status-badge {
+    font-size: 0.68rem;
+    padding: 0.2rem 0.55rem;
+  }
+
+  /* Stat cards : une seule colonne, padding réduit */
+  .stat-card {
+    padding: 1rem !important;
+  }
+
+  /* Titres de page */
+  h1 { font-size: 1.4rem !important; }
+  h2 { font-size: 1.1rem !important; }
+}
+
+/* ── Tablette (481px – 768px) ─────────────────────────────── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .auth-container { padding: 2rem 1.5rem; }
+
+  th, td {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* ── Dashboard : main content décalé quand sidebar fixe ───── */
+@media (max-width: 1024px) {
+  main { margin-left: 0 !important; width: 100%; }
+
+  /* Formulaire commandes : 1 colonne sur tablette */
+  #orderForm .grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Models : grille responsive ───────────────────────────── */
+@media (max-width: 640px) {
+  #modelsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+}
+@media (max-width: 380px) {
+  #modelsGrid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Sidebar ouverte : contenu pas décalé ─────────────────── */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+}
+
+/* ── Overflow horizontal global ───────────────────────────── */
+body { overflow-x: hidden; }
